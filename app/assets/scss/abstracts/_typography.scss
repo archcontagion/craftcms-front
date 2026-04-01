@@ -1,0 +1,128 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./colors" as *;
+
+/* TYPOGRAPHY */
+
+$font-size: 1rem;
+$line-height: 1.5;
+
+$display-sm: 3.75rem;
+$display-xxl: 9rem;
+$display: calculateFontSizeClamp( $container-sm, $container-xxl, $display-sm, $display-xxl );
+
+$h1-sm: 2.875rem;
+$h1-xxl: 4.5rem;
+$h1: calculateFontSizeClamp($container-sm, $container-xxl, $h1-sm, $h1-xxl);
+$h1-line-height: 110%;
+
+$h2-sm: 2.5rem;
+$h2-xxl: 3.375rem;
+$h2: calculateFontSizeClamp($container-sm, $container-xxl, $h2-sm, $h2-xxl);
+$h2-line-height: 110%;
+
+$h3-sm: 2rem;
+$h3-xxl: 2.75rem;
+$h3: calculateFontSizeClamp($container-sm, $container-xxl, $h3-sm, $h3-xxl);
+$h3-line-height: 110%;
+
+$h4-sm: 1.5rem;
+$h4-xxl: 2rem;
+$h4: calculateFontSizeClamp($container-sm, $container-xxl, $h4-sm, $h4-xxl);
+$h4-line-height: 110%;
+
+$h5-sm: 1.125rem;
+$h5-xxl: 1.5rem;
+$h5: calculateFontSizeClamp($container-sm, $container-xxl, $h5-sm, $h5-xxl);
+$h5-line-height: 110%;
+
+$h6-sm: 1rem;
+$h6-xxl: 1.25rem;
+$h6: calculateFontSizeClamp($container-sm, $container-xxl, $h6-sm, $h6-xxl);
+$h6-line-height: 110%;
+
+$lead-sm: 1.125rem;
+$lead-xxl: 1.25rem;
+$lead: calculateFontSizeClamp( $container-sm, $container-xxl, $lead-sm, $lead-xxl );
+
+$copy: 1rem;
+$small: 0.875rem;
+
+.container {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+.display {
+  font-size: $display;
+}
+
+h1,
+.h1 {
+  font-size: $h1;
+  line-height: $h1-line-height;
+}
+
+h2,
+.h2 {
+  font-size: $h2;
+  line-height: $h2-line-height;
+}
+
+h3,
+.h3 {
+  font-size: $h3;
+  line-height: $h3-line-height;
+}
+
+h4,
+.h4 {
+  font-size: $h4;
+  line-height: $h4-line-height;
+}
+
+h5,
+.h5 {
+  font-size: $h5;
+  line-height: $h5-line-height;
+}
+
+h6,
+.h6 {
+  font-size: $h6;
+  line-height: $h6-line-height;
+}
+
+.lead {
+  font-size: $lead;
+}
+
+.copy {
+  font-size: $copy;
+}
+
+.small {
+  font-size: $small;
+}
+
+header,
+footer,
+.section:not(.section-no-bg-color) .section__container,
+.section--bleed {
+  background-color: $page-bg-color;
+  color: $text-color;
+}

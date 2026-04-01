@@ -1,0 +1,43 @@
+@use 'sass:color';
+@use 'sass:math';
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return color.mix(white, $color, $percentage);
+}
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return color.mix(black, $color, $percentage);
+}
+/// Fluid font size using clamp(min, preferred, max). Outputs CSS only (no Sass math with calc/var).
+/// Use pixel numbers for viewport (e.g. 375, 1280) and rem for sizes (e.g. 2.25rem, 4rem).
+/// @param {Number} $min-width-px - minimum viewport width in pixels (unitless, e.g. 375)
+/// @param {Number} $max-width-px - maximum viewport width in pixels (unitless, e.g. 1280)
+/// @param {Number} $size-at-min - font size at min viewport (e.g. 2.25rem)
+/// @param {Number} $size-at-max - font size at max viewport (e.g. 4rem)
+/// @return {String} - full clamp() expression for CSS
+@function calculateFontSizeClamp(
+  $min-width,
+  $max-width,
+  $size-at-min-width,
+  $size-at-max-width
+) {
+  $slope: calc(
+    ($size-at-max-width - $size-at-min-width) / ($max-width - $min-width)
+  );
+  $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
+  $return-value: clamp(
+    #{$size-at-min-width},
+    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$size-at-max-width}
+  );
+  @return $return-value;
+}

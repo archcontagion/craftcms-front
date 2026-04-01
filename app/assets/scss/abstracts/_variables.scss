@@ -1,0 +1,57 @@
+/* SPACERS */
+$spacer: 1rem;
+$spacer-none: 0;
+$spacer-xxs: calc($spacer * 0.5);
+$spacer-xs: $spacer;
+$spacer-sm: calc($spacer * 1.5);
+$spacer-md: calc($spacer * 2);
+$spacer-lg: calc($spacer * 3);
+$spacer-xl: calc($spacer * 4);
+$spacer-xxl: calc($spacer * 8);
+
+/* LAYOUT */
+
+$container-sm: 35rem; // 35rem
+$container-xxl: 100rem; // 1600px - desktop
+
+$content-width: 100%;
+
+$container-padding: $spacer-md;
+
+$scroll-margin-top: $spacer-xl;
+
+$header-height: 5.5rem;
+$header-padding: 0 0 0 0;
+
+$hero-height: calc(100dvh - ($header-height + $spacer-xl + $spacer-sm));
+
+$footer-height: 6.25rem;
+$footer-padding: 0 0 0 0;
+
+$section-element-group-margin-bottom: $spacer-sm;
+
+$bp-mobile-small: 320px;
+$bp-mobile: 768px;
+$bp-tablet: 1024px;
+$bp-desktop: 1280px;
+$bp-desktop-large: 1440px;
+$bp-desktop-xlarge: 1600px;
+$bp-desktop-xxlarge: 1920px;
+
+$subtract-page-min-height: calc(100vh - ($header-height + $footer-height));
+
+$grid-gap: $spacer-sm;
+$grid-column-gap: $spacer-xs;
+$grid-row-gap: $spacer-xs;
+
+@media (max-width: $bp-tablet) {
+  $scroll-margin-top: $spacer-xl;
+}
+
+:root {
+  --grid-gap: #{$grid-gap};
+  --grid-column-gap: #{$grid-column-gap};
+  --grid-row-gap: #{$grid-row-gap};
+  --section-col-gap: #{$spacer-sm};
+  --section-row-gap: #{$spacer-sm};
+}

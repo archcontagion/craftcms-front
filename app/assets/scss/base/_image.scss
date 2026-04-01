@@ -1,0 +1,22 @@
+@use '../abstracts/colors' as *;
+
+$image-border-radius: 0.75rem;
+$image-border-width: 1px;
+$image-border-color: #ccc;
+$image-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+$image-transition: all 0.3s ease;
+$image-hover-transform: scale(1.05);
+
+.img {
+  width: 100%;
+  height: auto;
+
+  border-radius: $image-border-radius;
+  border: $image-border-width solid $image-border-color;
+  box-shadow: $image-box-shadow;
+  transition: $image-transition;
+
+  &.hover:hover {
+    transform: $image-hover-transform;
+  }
+}
