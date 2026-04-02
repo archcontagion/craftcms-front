@@ -1,0 +1,71 @@
+@use '../abstracts/colors' as *;
+
+$button-wrapper-padding: 0.5rem 1rem;
+$button-padding: 0.5rem 1rem;
+$button-border-radius: 0.25rem;
+
+$btn-primary-bg: #7d32f0;
+$btn-secondary-bg: #ffffff;
+$btn-tertiary-bg: transparent;
+
+$btn-primary-hover: #000000;
+$btn-secondary-hover: #7d32f0;
+$btn-tertiary-hover: $black-40;
+
+$btn-primary-text: $white;
+$btn-secondary-text: #000000;
+$btn-tertiary-text: $black;
+
+$btn-primary-text-hover: $white;
+$btn-secondary-text-hover: $white;
+$btn-tertiary-text-hover: $white;
+
+.btn {
+  padding: $button-padding;
+  border-radius: $button-border-radius;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-ps {
+  padding-left: 0;
+}
+
+.btn-pe {
+  padding-right: 0;
+}
+
+.btn-wrapper {
+  display: inline-block;
+  padding: $button-wrapper-padding;
+}
+
+.btn-primary {
+  background-color: $btn-primary-bg;
+  color: $btn-primary-text;
+
+  &:hover {
+    background-color: $btn-primary-hover;
+    color: $btn-primary-text-hover;
+  }
+}
+
+.btn-secondary {
+  background-color: $btn-secondary-bg;
+  color: $btn-secondary-text;
+
+  &:hover {
+    background-color: $btn-secondary-hover;
+    color: $btn-secondary-text-hover;
+  }
+}
+
+.btn-tertiary {
+  background-color: $btn-tertiary-bg;
+  color: $btn-tertiary-text;
+
+  &:hover {
+    background-color: $btn-tertiary-hover;
+    color: $btn-tertiary-text-hover;
+  }
+}
