@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/colors" as *;
+
+body {
+  margin: 0;
+}
+
+main {
+  min-height: $subtract-page-min-height;
+}
+
+[id] {
+  scroll-margin-top: $scroll-margin-top;
+}
+
+.logo svg {
+  width: 4rem;
+  margin-right: 1rem;
+  height: auto;
+  stroke: $white;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.no-collapse {
+  display: flex;
+  flex-direction: column;
+}
+
+.no-collapse > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.no-collapse .container {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.no-collapse::before,
+.no-collapse::after {
+  content: "";
+  display: table;
+}
+
+.no-collapse-mt-md:before {
+  margin-top: 2rem;
+}
+
+.no-collapse-mb-md:after {
+  margin-bottom: 2rem;
+}

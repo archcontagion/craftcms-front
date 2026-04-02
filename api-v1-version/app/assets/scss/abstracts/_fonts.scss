@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Nudica';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/fonts/Nudica-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nudica';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/Nudica-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nudica';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/Nudica-Medium.woff2') format('woff2');
+}
+
+/* Typography font mapping */
+h1 { font-family: 'Nudica'; font-weight: 300; }
+h2 { font-family: 'Nudica'; font-weight: 300; }
+h3 { font-family: 'Nudica'; font-weight: 300; }
+h4 { font-family: 'Nudica'; font-weight: 300; }
+h5 { font-family: 'Nudica'; font-weight: 300; }
+h6 { font-family: 'Nudica'; font-weight: 300; }
+.display { font-family: 'Nudica'; font-weight: 300; }
+.copy { font-family: 'Nudica'; font-weight: 400; }
+.lead { font-family: 'Nudica'; font-weight: 400; }
+.small { font-family: 'Nudica'; font-weight: 400; }
+.container { font-family: 'Nudica'; font-weight: 400; }
+strong { font-family: 'Nudica'; font-weight: 700; }
+b { font-family: 'Nudica'; font-weight: 700; }
+.bold { font-family: 'Nudica'; font-weight: 700; }

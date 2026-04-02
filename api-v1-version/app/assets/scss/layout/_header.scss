@@ -1,0 +1,28 @@
+@use '../abstracts/variables' as *;
+
+header {
+  height: $header-height;
+  max-width: $content-width;
+  padding: $header-padding;
+
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar__logo-img {
+    height: 32px;
+    display: block;
+  }
+
+  .navbar__link {
+    text-decoration: none;
+    color: inherit;
+  }
+}

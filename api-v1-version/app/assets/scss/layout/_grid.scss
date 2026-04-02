@@ -1,0 +1,71 @@
+@use "../abstracts/variables" as *;
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: $grid-row-gap;
+  column-gap: $grid-column-gap;
+  align-items: flex-start;
+
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &[data-cols]:not(.grid--no-col-gap) {
+    .grid-item {
+      flex: 0 0
+        calc(
+          (
+              100% - (var(--cols) + var(--section-col-gap)) *
+                #{$grid-column-gap}
+            ) /
+            var(--cols)
+        );
+    }
+  }
+
+  &--no-col-gap {
+    column-gap: 0 !important;
+
+    .grid-item {
+      flex: 0 0 calc(100% / var(--cols));
+      width: 100%;
+    }
+  }
+
+  .grid-item {
+    flex: 1;
+  }
+}
+
+// 12-column width classes for Craft section columns (matches `useSectionGridItemStyle` /
+// `CraftSectionContainer`: flex-basis = (row width − gaps) × units ÷ 12).
+// Parent must set `--section-cols` to the number of columns in the row (see `.section__container-inner`).
+$grid-units: 12;
+$bp-grid-desktop: 769px; // aligns with `useSectionGridItemStyle` (min-width: 769px)
+
+@for $n from 1 through $grid-units {
+  .grid-item.colspan-#{$n} {
+    @media (min-width: $bp-grid-desktop) {
+      flex: 0 0
+        calc(
+          (100% - (var(--section-cols, 1) - 1) * var(--section-col-gap)) * #{$n} /
+            #{$grid-units}
+        ) !important;
+      min-width: 0 !important;
+      max-width: calc(
+        (100% - (var(--section-cols, 1) - 1) * var(--section-col-gap)) * #{$n} /
+          #{$grid-units}
+      ) !important;
+    }
+
+    @media (max-width: $bp-mobile) {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+      flex: 0 0 auto !important;
+    }
+  }
+}

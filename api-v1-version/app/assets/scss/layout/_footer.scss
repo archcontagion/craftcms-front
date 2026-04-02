@@ -1,0 +1,26 @@
+@use '../abstracts/variables' as *;
+footer {
+  margin-top: -1px !important;
+  max-width: $content-width;
+  padding: $footer-padding;
+
+  .footer__links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer_list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: $spacer-xs 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer__link {
+    text-decoration: none;
+    color: inherit;
+  }
+}
